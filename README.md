@@ -4,7 +4,7 @@
 
 ## Overview:
 
-You will be creating a full stack application using Ruby on Rails and MySQL.
+You will be creating a full stack application using NodeJS and NoSQL.
 
 ---
 
