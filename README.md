@@ -59,8 +59,6 @@ By the time you submit this project, you will have covered new ground in, and re
 - Allow users to upload image files 
 - Use a CSS library like [Bootstrap](https://www.npmjs.com/package/bootstrap)
 - [Seed database](https://gorails.com/episodes/intro-to-importing-from-csv) from CSV file of data
-- Use 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
-- Allow users to upload image files 
 
 
 ### Team Requirements
