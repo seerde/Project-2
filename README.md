@@ -21,7 +21,7 @@ By the time you submit this project, you will have covered new ground in, and re
 - **Responsive Web Design**: Making web applications that respond to device size.
 - **Server Side Applications**: Server-side scripting is a technique used in web development which involves employing scripts on a web server which produce a response customized for each user's (client's) request to the website.
 - **Databases**: A structured set of data held in a computer, especially one that is accessible in various ways.
-- **NoSQL**: SQL is used to communicate with a database. It is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
+- **NoSQL**: "not only SQL," database provides a mechanism for storage and retrieval of data, an alternative to traditional relational databases in which data is placed in tables. Data schema is carefully designed before the database is built.
 - **JavaScript**: JavaScript programming fundamentals including Object Oriented Programming with Classes and Inheritance.
 - **NodeJS and Express**: A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
 - **Mongodb**: A cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema.
@@ -57,7 +57,7 @@ By the time you submit this project, you will have covered new ground in, and re
 - Make application responsive
 - Use a 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
 - Allow users to upload image files 
-- Use a CSS library like [Bootstrap (tutorial)](https://m.pardel.net/react-and-bootstrap-4-part-1-setup-navigation-d4767e2ed9f0)
+- Use a CSS library like [Bootstrap](https://www.npmjs.com/package/bootstrap)
 - [Seed database](https://gorails.com/episodes/intro-to-importing-from-csv) from CSV file of data
 - Use 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
 - Allow users to upload image files 
