@@ -24,7 +24,8 @@ By the time you submit this project, you will have covered new ground in, and re
 - **NoSQL**: SQL is used to communicate with a database. It is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
 - **JavaScript**: JavaScript programming fundamentals including Object Oriented Programming with Classes and Inheritance.
 - **NodeJS and Express**: A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
-
+- **Mongodb**: A cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schema.
+- **Mongoose**: Provides a schema-based solution for object modeling with Node.js to model your Mongodb data.
 ---
 
 ## Requirements
@@ -54,18 +55,26 @@ By the time you submit this project, you will have covered new ground in, and re
 #### Stretch Technical Goals (optional)
 
 - Make application responsive
-- Use a 3rd party gem like [bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) 
-- [Seed database](https://gorails.com/episodes/intro-to-importing-from-csv) from CSV file of data
 - Use a 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
 - Allow users to upload image files 
-- [Rails Active Storage Video](https://gorails.com/episodes/file-uploading-with-activestorage-rails-5-2)
-- [Amazon s3 Tutorial](https://medium.com/alturasoluciones/setting-up-rails-5-active-storage-with-amazon-s3-3d158cf021ff)
-- [s3 Heroku Tutorial](https://devcenter.heroku.com/articles/direct-to-s3-image-uploads-in-rails)
+- Use a CSS library like [Bootstrap (tutorial)](https://m.pardel.net/react-and-bootstrap-4-part-1-setup-navigation-d4767e2ed9f0)
+- [Seed database](https://gorails.com/episodes/intro-to-importing-from-csv) from CSV file of data
+- Use 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
+- Allow users to upload image files 
+
+
+### Team Requirements
+
+- Every team member must have commits contributing to the project.  
+- Pair programming is allowed and should be noted in the commit by using `@github_username` of each student pairing
+- No single student should do a majority of the commits.
+
+
 
 
 ### Necessary Deliverables
-- Projects are due on Thursday, 26th Dec, 2019 at 8.30am!
-- You have to fill the [google sheet](https://docs.google.com/spreadsheets/d/12EZArlpebL0RunXoHibb1jruWvtWFLldOxFSR3hCkNE/edit#gid=1524627818) before 8.30am with you name, github link and deployed link.
+- Projects are due on Thursday, 2nd of April, 2020 at 9.00am!
+- You have to fill the [google sheet] with you name, github link and deployed link.
 - A **10 minute presentation** in which you answer the following questions:
   - What is the application about?
   - Is there any information you think might help us understand what you built?
@@ -80,7 +89,7 @@ By the time you submit this project, you will have covered new ground in, and re
 
 ## Useful Resources
 
-- **[Rails Docs](https://guides.rubyonrails.org/getting_started.html)**
-- **[Heroku Deployment Rails](https://devcenter.heroku.com/articles/getting-started-with-rails6)**
 - **[Git Team Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows)**
 - **[Git Team Cheatsheet](https://jameschambers.co/writing/git-team-workflow-cheatsheet/)**
+- **[nodeJS Example projects](https://github.com/sqreen/awesome-nodejs-projects)**
+- **[MongooseJS documentation](https://mongoosejs.com/docs/index.html)**
