@@ -21,9 +21,9 @@ By the time you submit this project, you will have covered new ground in, and re
 - **Responsive Web Design**: Making web applications that respond to device size.
 - **Server Side Applications**: Server-side scripting is a technique used in web development which involves employing scripts on a web server which produce a response customized for each user's (client's) request to the website.
 - **Databases**: A structured set of data held in a computer, especially one that is accessible in various ways.
-- **SQL**: SQL is used to communicate with a database. It is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
-- **Ruby**: Ruby programming fundamentals including Object Oriented Programming with Classes and Inheritance.
-- **Ruby on Rails**: A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
+- **NoSQL**: SQL is used to communicate with a database. It is the standard language for relational database management systems. SQL statements are used to perform tasks such as update data on a database, or retrieve data from a database.
+- **JavaScript**: JavaScript programming fundamentals including Object Oriented Programming with Classes and Inheritance.
+- **NodeJS and Express**: A web-application framework that includes everything needed to create database-backed web applications according to the Model-View-Controller (MVC) pattern.
 
 ---
 
@@ -32,8 +32,7 @@ By the time you submit this project, you will have covered new ground in, and re
 ### General Requirements
 
 - Build a web application from scratch, must be your own work.
-- Use Ruby on Rails framework to build your application
-- Don't use Rails Scaffolding for generating your resources.
+- Use Express framework to build your application
 - Deploy on Heroku so application is live on the web [here](https://github.com/sei-jed-10/deployment-in-heroku)
 - Create a `README.md` file that explains your app to the world
 
@@ -55,7 +54,7 @@ By the time you submit this project, you will have covered new ground in, and re
 #### Stretch Technical Goals (optional)
 
 - Make application responsive
-- Use a 3rd party gem like [bootstrap](https://github.com/twbs/bootstrap-rubygem) 
+- Use a 3rd party gem like [bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) 
 - [Seed database](https://gorails.com/episodes/intro-to-importing-from-csv) from CSV file of data
 - Use a 3rd party API with [httparty](https://github.com/jnunemaker/httparty)
 - Allow users to upload image files 
