@@ -15,6 +15,11 @@ router.get("/auth/signin", (request, response) => {
   response.render("auth/signin");
 });
 
+router.get("/home", (request, response) => {
+  response.render("home");
+})
+
+
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
