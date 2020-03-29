@@ -6,13 +6,6 @@ const isLoggedIn = require("../config/loginBlocker");
 const { check, validationResult } = require("express-validator");
 
 //--- Get
-router.get("/artist/create", (request, response) => {
-  response.render("artist/create");
-});
-
-router.get("/artist/index", (request, response) => {
-  response.render("artist/index");
-});
 
 router.get("/auth/signup", (request, response) => {
   response.render("auth/signup");
