@@ -6,6 +6,28 @@
     <title>Art Gallery</title>
   </head>
   <body>
+
+   
+    
+
+    <nav class="navigation">
+      <div>
+        <a href="/home">Home </a>
+        <a href="/auth/signin" style="padding-left: 10px;"></a>
+        <a href="/auth/signup" style="padding-left: 10px;"></a>
+      </div>
+      <% if(currentUser) {%>
+      <div>
+        <a href="/home"><%= currentUser.name %></a>
+        <a href="/auth/logout">Logout</a>
+      </div>
+      <%} %> <% if(!currentUser) {%>
+      <div>
+        <a href="/auth/signin">Signin</a>
+        <a href="/auth/signup">Signup</a>
+      </div>
+      <%} %>
+    </nav>
     <%- body %>
   </body>
 </html>
