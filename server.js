@@ -9,7 +9,8 @@ const session = require("express-session");
 const flash = require("connect-flash");
 let passport = require("./config/passportConfig");
 
-mongoose.connect(process.env.mongoDBURL,
+mongoose.connect(
+  process.env.mongoDBURL,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -44,15 +45,15 @@ server.use(passport.initialize());
 server.use(passport.session());
 server.use(flash());
 
-server.use(function (request, response, next) {
+server.use(function(request, response, next) {
   // before every route, attach the flash messages and current user to res.locals
   response.locals.alerts = request.flash();
   response.locals.currentUser = request.user;
   next();
 });
 
-server.use(authRoutes);
-server.use(seniorRoutes);
+// server.use(authRoutes);
+// server.use(seniorRoutes);
 
 server.get("*", (request, response) => {
   response.send("Page not found");
