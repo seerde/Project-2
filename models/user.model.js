@@ -7,12 +7,10 @@ const userSchema = mongoose.Schema(
     firstname: {
       type: String,
       required: true
-
     },
     lastname: {
       type: String,
       required: true
-      
     },
     email: {
       type: String,
@@ -23,21 +21,11 @@ const userSchema = mongoose.Schema(
     password: {
       type: String,
       required: true
-      
-    },
-    isAdmin: {
-      type: Boolean,
-      default: false
-    },
-    isSuperUser: {
-      type: Boolean,
-      default: false
     },
     userType: {
       type: String,
       enum: ["admin", "user", "artist"],
-      default: "admin"
-
+      default: "user"
     }
   },
   { timestamps: true }

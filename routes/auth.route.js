@@ -22,65 +22,65 @@ router.get("/auth/logout", (request, response) => {
   response.redirect("/auth/signin");
 });
 
-// router.get("/home", isLoggedIn, (request, response) => {
-//   Order.find().then(orders => {
-//     response.render("home", { orders });
-//   });
-// });
+router.get("/home", isLoggedIn, (request, response) => {
+  Order.find().then(orders => {
+    response.render("home", { orders });
+  });
+});
 
 //--- Post
 
-// router.post(
-//   "/auth/signup",
-//   [
-//     check("name").isLength({ min: 3 }),
-//     check("phone").isLength({ min: 3 }),
-//     check("email").isEmail(),
-//     check("password").isLength({ min: 6 })
-//   ],
-//   (request, response) => {
-//     const errors = validationResult(request);
-//     if (!errors.isEmpty()) {
-//       request.flash("autherror", errors.errors);
-//       return response.redirect("/auth/signup");
-//     }
-//     let user = new User(request.body);
-//     user
-//       .save()
-//       .then(() => {
-//         // response.redirect("/home");
-//         passport.authenticate("local", {
-//           successRedirect: "/home",
-//           successFlash: "Account created and Logged In!"
-//         })(request, response);
-//       })
-//       .catch(err => {
-//         console.log(err);
-//         request.flash("error", "Email already exists!");
-//         return response.redirect("/auth/signup");
-//       });
-//   }
-// );
+router.post(
+  "/auth/signup",
+  [
+    check("firstname").isLength({ min: 3 }),
+    check("lastname").isLength({ min: 3 }),
+    check("email").isEmail(),
+    check("password").isLength({ min: 6 })
+  ],
+  (request, response) => {
+    const errors = validationResult(request);
+    if (!errors.isEmpty()) {
+      request.flash("autherror", errors.errors);
+      return response.redirect("/auth/signup");
+    }
+    let user = new User(request.body);
+    user
+      .save()
+      .then(() => {
+        // response.redirect("/home");
+        passport.authenticate("local", {
+          successRedirect: "/home",
+          successFlash: "Account created and Logged In!"
+        })(request, response);
+      })
+      .catch(err => {
+        console.log(err);
+        request.flash("error", "Email already exists!");
+        return response.redirect("/auth/signup");
+      });
+  }
+);
 
-// router.post(
-//   "/auth/signin",
-//   passport.authenticate("local", {
-//     successRedirect: "/home",
-//     failureRedirect: "/auth/signin",
-//     failureFlash: "Invalid Phone number or Password!",
-//     successFlash: "Logged In!"
-//   })
-// );
+router.post(
+  "/auth/signin",
+  passport.authenticate("local", {
+    successRedirect: "/home",
+    failureRedirect: "/auth/signin",
+    failureFlash: "Invalid Phone number or Password!",
+    successFlash: "Logged In!"
+  })
+);
 
 //-- Login Route
-// router.post(
-//   "/auth/signin",
-//   passport.authenticate("local", {
-//     successRedirect: "/home", //after login success
-//     failureRedirect: "/auth/signin", //if fail
-//     failureFlash: "Invalid Username or Password",
-//     successFlash: "You have logged In!"
-//   })
-// );
+router.post(
+  "/auth/signin",
+  passport.authenticate("local", {
+    successRedirect: "/home", //after login success
+    failureRedirect: "/auth/signin", //if fail
+    failureFlash: "Invalid Username or Password",
+    successFlash: "You have logged In!"
+  })
+);
 
 module.exports = router;
