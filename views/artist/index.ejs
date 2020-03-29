@@ -1,0 +1,36 @@
+<h1>Artist Page</h1>
+
+<div>
+  <% artist.forEach(function(artist){ %>
+
+  <div><img src="<%= artist.image %>" height="200px" width="200px" /></div>
+
+  <div>
+    <a href="/artist/<%= artist._id%>"><%= artist.name %></a>
+  </div>
+
+  <div>Email Address: <%= artist.emailAddress %></div>
+  <div>Phone Number: <%= artist.phoneNumber %></div>
+
+  <hr />
+  <% artist.art.forEach(function(art){ %>
+  <div>
+    <div class="art">Article: <%= art.title %></div>
+    <div class="art">Content: <%= art.content %></div>
+  </div>
+  <hr />
+  <% }) %>
+
+  <div>Created On: <%= moment(artist.createdAt).fromNow() %></div>
+
+  <div>
+    <form
+      method="POST"
+      action="/artist/<%= atrest._id %>/delete?_method=DELETE"
+    >
+      <button type="submit">Delete Artist</button>
+    </form>
+  </div>
+
+  <% }) %>
+</div>
