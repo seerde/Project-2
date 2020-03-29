@@ -1,0 +1,27 @@
+<div><h1>Artest Gallery <%= currentUser.firstname %>!</h1></div>
+<!-- <div><h3>You are logged in <%= currentUser.firstname %>!</h3></div> -->
+<div>
+  <% if(currentUser.isAdmin){ %>
+  <% users.forEach(function(user){%>
+  <div><%= user.firstname %></div>
+  <% }) %> <% } %>
+</div>
+<div>
+
+</div>
+<div>
+  <h2>Best Seller</h2>
+</div>
+<div>
+  <h2>ARTISTS WE WORK WITH</h2>
+
+  <% Artests.forEach(function(Artest){ %>
+
+    <div> <img src="<%= artist.image %>" height="200px" width="200px"></div>
+
+   
+    <div>Email Address: <%= artest.emailAddress %></div>
+    <div>Phone Number: <%= artest.phoneNumber %></div>
+
+</div>
+<% }) %>
