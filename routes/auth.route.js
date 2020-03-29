@@ -29,6 +29,14 @@ router.get("/home", isLoggedIn, (request, response) => {
   //   });
 });
 
+router.get("/artests/create", isLoggedIn,  (request, response) => {
+  response.render("artests/create");
+});
+
+router.get("/artests/index", isLoggedIn,  (request, response) => {
+  response.render("artests/index");
+});
+
 //--- Post
 
 router.post(
