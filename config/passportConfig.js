@@ -6,7 +6,7 @@ const User = require("../models/user.model");
  * Passport "serializes" objects to make them easy to store, converting the
  * user to an identifier (id)
  */
-passport.serializeUser(function (user, done) {
+passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
@@ -14,8 +14,8 @@ passport.serializeUser(function (user, done) {
  * Passport "deserializes" objects by taking the user's serialization (id)
  * and looking it up in the database
  */
-passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
     done(err, user);
   });
 });
@@ -43,11 +43,11 @@ passport.deserializeUser(function (id, done) {
 passport.use(
   new LocalStrategy(
     {
-      usernameField: "phone",
+      usernameField: "email",
       passwordField: "password"
     },
-    function (phone, password, done) {
-      User.findOne({ phone: phone }, function (err, user) {
+    function(email, password, done) {
+      User.findOne({ email: email }, function(err, user) {
         if (err) return done(err);
 
         // If no user is found // TODO. remove flash message for now

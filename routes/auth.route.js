@@ -15,11 +15,6 @@ router.get("/auth/signin", (request, response) => {
   response.render("auth/signin");
 });
 
-router.get("/home", (request, response) => {
-  response.render("home");
-})
-
-
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
@@ -28,9 +23,10 @@ router.get("/auth/logout", (request, response) => {
 });
 
 router.get("/home", isLoggedIn, (request, response) => {
-  Order.find().then(orders => {
-    response.render("home", { orders });
-  });
+  response.render("home");
+  //   Order.find().then(orders => {
+  //     response.render("home", { orders });
+  //   });
 });
 
 //--- Post
@@ -65,16 +61,6 @@ router.post(
         return response.redirect("/auth/signup");
       });
   }
-);
-
-router.post(
-  "/auth/signin",
-  passport.authenticate("local", {
-    successRedirect: "/home",
-    failureRedirect: "/auth/signin",
-    failureFlash: "Invalid Phone number or Password!",
-    successFlash: "Logged In!"
-  })
 );
 
 //-- Login Route

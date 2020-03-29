@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const salt = 10;
 
 const userSchema = mongoose.Schema(
   {
@@ -32,17 +31,20 @@ const userSchema = mongoose.Schema(
 );
 
 userSchema.pre("save", function(next) {
-  let user = this;
-  if (!user.isModified("password")) {
-    return next();
-  }
+  var user = this;
+  // Only hash the password if it has been modified (or is new)
+  if (!user.isModified("password")) return next();
 
-  let hash = bcrypt.hashSync(user.password, salt);
+  //hash the password
+  var hash = bcrypt.hashSync(user.password, 10);
+
+  // Override the cleartext password with the hashed one
   user.password = hash;
   next();
 });
 
-userSchema.methods.verifyPassword = function(password) {
+userSchema.methods.validPassword = function(password) {
+  // Compare is a bcrypt method that will return a boolean,
   return bcrypt.compareSync(password, this.password);
 };
 
