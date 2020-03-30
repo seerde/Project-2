@@ -18,7 +18,9 @@ router.get("/auth/signin", (request, response) => {
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
-  request.flash("success", "Dont leave please come back!");
+  if (request.updated) {
+    request.flash("updated", "Updated. Please Signin again!");
+  }
   response.redirect("/auth/signin");
 });
 
