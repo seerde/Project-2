@@ -15,7 +15,7 @@
   <hr />
   <% artist.art.forEach(function(art){ %>
   <div>
-    <div class="art">Article: <%= art.title %></div>
+    <div class="art">Art: <%= art.title %></div>
     <div class="art">Content: <%= art.content %></div>
   </div>
   <hr />
@@ -26,7 +26,7 @@
   <div>
     <form
       method="POST"
-      action="/artist/<%= atrest._id %>/delete?_method=DELETE"
+      action="/artist/<%= atrist._id %>/delete?_method=DELETE"
     >
       <button type="submit">Delete Artist</button>
     </form>

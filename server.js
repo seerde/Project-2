@@ -4,6 +4,7 @@ const PORT = process.env.PORT;
 const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./routes/auth.route");
+const artistRoutes = require("./routes/artist.route");
 //const seniorRoutes = require("./routes/senior.route");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -52,6 +53,7 @@ server.use(function(request, response, next) {
   next();
 });
 
+server.use(artistRoutes);
 server.use(authRoutes);
 // server.use(seniorRoutes);
 
