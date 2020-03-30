@@ -4,14 +4,15 @@
   action="/art/create/<%= currentUser._id %>"
   enctype="multipart/form-data"
 >
+<nav id="Post">
   <div>
-    <label>Title: </label>
+    <label>Title </label>
     <br />
     <input name="title" />
   </div>
 
   <div>
-    <label>Description: </label>
+    <label>Description </label>
     <br />
     <textarea
       name="description"
@@ -22,16 +23,19 @@
   </div>
 
   <div>
-    <label> Price: </label>
+    <label> Price </label>
     <br />
     <input type="number" name="price" />
   </div>
 
   <div>
-    <label>Upload Art Image: </label>
+    <label>Upload Art Image </label>
     <br />
     <input type="file" name="image" />
   </div>
-
+<br>
+<div>
   <button type="submit">Create Art</button>
+</div>
 </form>
+</nav>
