@@ -56,6 +56,7 @@ server.use(function(request, response, next) {
 
 server.use(artRoutes);
 server.use(authRoutes);
+
 server.use(userRoutes);
 
 server.get("/", (request, response) => {
