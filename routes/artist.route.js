@@ -42,7 +42,7 @@ router.post(
       const errors = validationResult(request);
       if (!errors.isEmpty()) {
         request.flash("artisterror", errors.errors);
-        return response.redirect("/artist/index");
+        return response.redirect("/artist/create");
       }
       let user = new User(request.body);
       user

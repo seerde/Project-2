@@ -15,6 +15,7 @@ router.get("/auth/signin", (request, response) => {
   response.render("auth/signin");
 });
 
+
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
