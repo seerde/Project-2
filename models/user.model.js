@@ -25,7 +25,13 @@ const userSchema = mongoose.Schema(
       type: String,
       enum: ["admin", "user", "artist"],
       default: "user"
-    }
+    },
+    art: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Art"
+      }
+    ]
   },
   { timestamps: true }
 );

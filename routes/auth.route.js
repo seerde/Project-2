@@ -18,9 +18,7 @@ router.get("/auth/signin", (request, response) => {
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
-  if (request.updated) {
-    request.flash("updated", "Updated. Please Signin again!");
-  }
+  request.flash("success", "Logged Out!");
   response.redirect("/auth/signin");
 });
 
@@ -50,12 +48,19 @@ router.post(
     let user = new User(request.body);
     user
       .save()
-      .then(() => {
+      .then(user => {
         // response.redirect("/home");
-        passport.authenticate("local", {
-          successRedirect: "/home",
-          successFlash: "Account created and Logged In!"
-        })(request, response);
+        if (user.userType == "artist") {
+          passport.authenticate("local", {
+            successRedirect: "/art/create",
+            successFlash: "Account created and Logged In!"
+          })(request, response);
+        } else {
+          passport.authenticate("local", {
+            successRedirect: "/home",
+            successFlash: "Account created and Logged In!"
+          })(request, response);
+        }
       })
       .catch(err => {
         console.log(err);

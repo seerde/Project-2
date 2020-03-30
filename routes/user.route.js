@@ -27,8 +27,9 @@ router.post(
       user.email = updateObj.email;
       user.password = updateObj.password;
       user.save();
+      request.logout();
       request.flash("updated", "Updated. Please Signin again!");
-      response.redirect("/auth/logout");
+      response.redirect("/auth/signin");
     });
   }
 );
