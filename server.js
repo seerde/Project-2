@@ -53,7 +53,7 @@ server.use(function(request, response, next) {
 });
 
 server.use(authRoutes);
-// server.use(seniorRoutes);
+
 
 server.get("*", (request, response) => {
   response.send("Page not found");
