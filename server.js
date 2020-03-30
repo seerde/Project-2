@@ -4,7 +4,7 @@ const PORT = process.env.PORT;
 const mongoose = require("mongoose");
 const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./routes/auth.route");
-const artistRoutes = require("./routes/artist.route");
+const artRoutes = require("./routes/art.route");
 const userRoutes = require("./routes/user.route");
 //const seniorRoutes = require("./routes/senior.route");
 const session = require("express-session");
@@ -54,10 +54,10 @@ server.use(function(request, response, next) {
   next();
 });
 
-server.use(artistRoutes);
+server.use(artRoutes);
 server.use(authRoutes);
+
 server.use(userRoutes);
-// server.use(seniorRoutes);
 
 server.get("/", (request, response) => {
   response.redirect("/home");

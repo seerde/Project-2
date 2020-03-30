@@ -14,6 +14,14 @@ router.get("/user/update", isLoggedIn, (request, response) => {
   response.render("user/update");
 });
 
+router.get("/user/updateInformatoin", isLoggedIn, (request, response) => {
+  response.render("user/updateInformatoin");
+});
+
+router.get("/auth/home", isLoggedIn, (request, response) => {
+  response.render("/auth/home");
+});
+
 router.post(
   "/user/update/:id",
   [check("newEmail").isEmail(), check("newPassword").isLength({ min: 6 })],
@@ -27,8 +35,9 @@ router.post(
       user.email = updateObj.email;
       user.password = updateObj.password;
       user.save();
+      request.logout();
       request.flash("updated", "Updated. Please Signin again!");
-      response.redirect("/auth/logout");
+      response.redirect("/auth/signin");
     });
   }
 );

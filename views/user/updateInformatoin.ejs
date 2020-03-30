@@ -1,0 +1,54 @@
+<div class="text-center">
+    <form
+      class="form-signin"
+      method="POST"
+      action="/user/update/<%= currentUser._id %>"
+    >
+      <h1 class="h3 mb-3 font-weight-normal">Update Informations</h1>
+      <label for="inputName" class="sr-only">Old First name</label>
+      <input
+        type="string"
+        id="inputName"
+        class="form-control"
+        placeholder="Old First name"
+        required=""
+        autofocus=""
+        name="oldName"
+        value="<%= currentUser.firstname %>"
+        disabled
+      />
+      <label for="inputName" class="sr-only">New First Name </label>
+      <input
+        type="Name"
+        id="inputName"
+        class="form-control"
+        placeholder="New First Name"
+        required=""
+        autofocus=""
+        name="renewName"
+      />
+      <label for="inputlast" class="sr-only">Old Last Name</label>
+      <input
+        type="string"
+        id="inputlast"
+        class="form-control"
+        placeholder="Old Last Name"
+        required=""
+        name="oldLast Name"
+        value="<%= currentUser.lastname %>"
+      />
+      <label for="inputLast Name" class="sr-only">New Last Name</label>
+      <input
+        type="string"
+        id="inputLast Name"
+        class="form-control"
+        placeholder="New Last Name"
+        required=""
+        name="renewLastName"/>
+      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Update
+      </button>
+    </form>
+  </div>
+  
