@@ -14,8 +14,8 @@ router.get("/user/update", isLoggedIn, (request, response) => {
   response.render("user/update");
 });
 
-router.get("/user/updateInformatoin", isLoggedIn, (request, response) => {
-  response.render("user/updateInformatoin");
+router.get("/user/updateInformation", isLoggedIn, (request, response) => {
+  response.render("user/updateInformation");
 });
 
 router.get("/auth/home", isLoggedIn, (request, response) => {
