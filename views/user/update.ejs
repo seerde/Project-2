@@ -1,0 +1,62 @@
+<div class="text-center">
+  <form
+    class="form-signin"
+    method="POST"
+    action="/user/update/<%= currentUser._id %>"
+  >
+    <h1 class="h3 mb-3 font-weight-normal">Update Informations</h1>
+    <label for="inputEmail" class="sr-only">Old Email address</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      placeholder="Old Email address"
+      required=""
+      autofocus=""
+      name="oldEmail"
+      value="<%= currentUser.email %>"
+      disabled
+    />
+    <label for="inputEmail" class="sr-only">New Email address</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      placeholder="New Email address"
+      required=""
+      autofocus=""
+      name="newEmail"
+      value="<%= currentUser.email %>"
+    />
+    <label for="inputPassword" class="sr-only">Old Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Old Password"
+      required=""
+      name="oldPassword"
+    />
+    <label for="inputPassword" class="sr-only">New Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="New Password"
+      required=""
+      name="newPassword"
+    />
+    <label for="inputPassword" class="sr-only">Repeat New Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      placeholder="Repeat New Password"
+      required=""
+      name="reNewPassword"
+    />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+      Update
+    </button>
+  </form>
+</div>
