@@ -1,0 +1,41 @@
+<nav id="loguser">
+<div class="hello"><h4>artist Gallery <%= currentUser.firstname %>!</h4></div>
+<!-- <div><h3>You are logged in <%= currentUser.firstname %>!</h3></div> -->
+<hr>
+<div>
+  <% if(currentUser.userType == "admin"){ %> <% users.forEach(function(user){%>
+  <div><%= user.firstname %></div>
+  <% }) %> <% } %>
+</div>
+
+
+  <h1>Best Seller</h1>
+  <div class="empty">
+    <div class="box"></div>
+   <div class="box"></div>
+   <div class="box"></div>
+
+   <div class="box clear"></div>
+   <div class="box special"></div>
+   <div class="box"></div>
+</div>
+
+
+<div class="partner">
+  <h1>ARTISTS WE WORK WITH</h1>
+  <% //Artist.forEach(function(artist){ %>
+    <div><img src="<%= //artist.image %>" height="200px" width="200px" /></div>
+  <div>Email Address: <%= //artist.emailAddress %></div>
+  <div>Phone Number: <%= //artist.phoneNumber %></div>
+</div>
+<% //}) %>
+
+</nav>
+
+<div>
+  <h1>Advertisements</h1>
+  <div class="empty">
+    <div class="box"><img src="/images/khsinanay.jpg" alt="Smiley face" height="100%" width="100%"></div>
+   <div class="box"><img src="/images/Eq6-.jpeg" alt="Smiley face" height="100%" width="100%"></div>
+   <div class="box"><img src="/images/1111.jpeg" alt="Smiley face" height="100%" width="100%"></div>
+</div>
