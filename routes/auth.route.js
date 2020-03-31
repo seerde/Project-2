@@ -1,5 +1,8 @@
 const router = require("express").Router();
 const User = require("../models/user.model");
+const Art = require("../models/art.model");
+const moment = require("moment");
+
 // const Order = require("../models/order.model");
 const passport = require("../config/passportConfig");
 const isLoggedIn = require("../config/loginBlocker");
@@ -15,7 +18,6 @@ router.get("/auth/signin", (request, response) => {
   response.render("auth/signin");
 });
 
-
 //--- Logout Route
 router.get("/auth/logout", (request, response) => {
   request.logout(); //clear and break session
@@ -24,14 +26,12 @@ router.get("/auth/logout", (request, response) => {
 });
 
 router.get("/home", isLoggedIn, (request, response) => {
-  response.render("home");
-  //   Order.find().then(orders => {
-  //     response.render("home", { orders });
-  //   });
+  Art.find().then(arts => {
+    response.render("home", { arts, moment });
+  });
 });
 
 //--- Post
-
 router.post(
   "/auth/signup",
   [

@@ -6,10 +6,16 @@
   <% if(currentUser.userType == "admin"){ %> <% users.forEach(function(user){%>
   <div><%= user.firstname %></div>
   <% }) %> <% } %>
+  
+   <h1>Best Seller</h1>
+  <div>Created On: <%= moment(arts.createdAt).fromNow() %></div>
+  <div>
+      <form method="POST" 
+      action="/art/<%= arts._id %>/delete?_method=DELETE">
+  <button type="submit">Delete Art</button>
+  </form>
 </div>
-
-
-  <h1>Best Seller</h1>
+ 
   <div class="empty">
     <div class="box"></div>
    <div class="box"></div>
@@ -20,6 +26,7 @@
    <div class="box"></div>
 </div>
 
+</div>
 
 <div class="partner">
   <h1>ARTISTS WE WORK WITH</h1>
