@@ -47,7 +47,7 @@ router.post(
   (request, response) => {
     console.log(request.body);
     let updateObj = { firstname: request.body.newfirstname };
-    if (request.body.newlastname == request.body.reNewlastname) {
+    if (request.body.newlastname == request.body.newlastname) {
       updateObj.lastname = request.body.newlastname;
     }
     User.findById(request.params.id).then(user => {
@@ -61,8 +61,6 @@ router.post(
   }
 );
 
-// check("firstname").isLength({ min: 3 }),
-//     check("lastname").isLength({ min: 3 }),
 
 // router.post(
 //   "/user/update/:id",
