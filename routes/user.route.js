@@ -10,6 +10,14 @@ router.get("/user/index", isLoggedIn, (request, response) => {
   response.render("user/index");
 });
 
+router.get("/user/show/:id", (request, response) => {
+  User.findById(request.params.id)
+    .populate("art")
+    .then(user => {
+      response.render("user/show", { user });
+    });
+});
+
 router.get("/user/update", isLoggedIn, (request, response) => {
   response.render("user/update");
 });
