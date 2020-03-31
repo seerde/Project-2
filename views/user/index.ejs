@@ -1,8 +1,14 @@
 <h1>Hello <%= currentUser.firstname %></h1>
-<<<<<<< HEAD
-<h1><a href="/auth/home">home</a></h1>
-<h1><a href="/user/update">Update Email and Password</a></h1>
-<h1><a href="/user/updateInformation">Update informaction</a></h1>
+<div class="w3-bar-block w3-black" style="width:320px">
+  <a href="/auth/home" class="w3-bar-item w3-button">home</a>
+  <a href="/user/update" class="w3-bar-item w3-button"
+    >Update Email and Password</a
+  >
+  <a href="/user/updateInformation" class="w3-bar-item w3-button"
+    >Update informaction</a
+  >
+</div>
+>
 <div class="artist__work" id="loguser">
   <% if(currentUser.userType == "artist"){%>
   <h3>Your Work</h3>
@@ -33,16 +39,6 @@
   </div>
   <%}%>
 </div>
-=======
-<div class="w3-bar-block w3-black" style="width:320px">
-  <a href="/auth/home" class="w3-bar-item w3-button">home</a>
-  <a href="/user/update" class="w3-bar-item w3-button">Update Email and Password</a>
-  <a href="/user/updateInformation" class="w3-bar-item w3-button">Update informaction</a>
-</div>
-
->>>>>>> ea6fc1f73dbba1a365bcf563a59b49f9ef7328af
 <footer>
   made by EJM group @2020
 </footer>
-
-
