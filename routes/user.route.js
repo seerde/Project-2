@@ -50,14 +50,21 @@ router.post(
   }
 );
 router.post(
-  "/user/updateInformation/:id",
-  [check("Newfirstname").isLength({min: 3}), check("Newlastname").isLength({ min: 3 })],
+  "/user/updateinformation/:id",
+  [
+    check("newFirstname").isLength({ min: 3 }),
+    check("newLastname").isLength({ min: 3 })
+  ],
   (request, response) => {
-    console.log(request.body);
-    let updateObj = { firstname: request.body.newfirstname };
-    if (request.body.newlastname == request.body.newlastname) {
-      updateObj.lastname = request.body.newlastname;
+    const errors = validationResult(request);
+    if (!errors.isEmpty()) {
+      request.flash("autherror", errors.errors);
+      return response.redirect("/auth/signup");
     }
+    let updateObj = {
+      firstname: request.body.newFirstname,
+      lastname: request.body.newLastname
+    };
     User.findById(request.params.id).then(user => {
       user.firstname = updateObj.firstname;
       user.lastname = updateObj.lastname;
@@ -68,7 +75,6 @@ router.post(
     });
   }
 );
-
 
 // router.post(
 //   "/user/update/:id",
