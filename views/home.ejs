@@ -8,16 +8,16 @@
   <% }) %> <% } %>
   
    <h1>Best Seller</h1>
-  <div>Created On: <%= moment(arts.createdAt).fromNow() %></div>
-  <div>
-      <form method="POST" 
-      action="/art/<%= arts._id %>/delete?_method=DELETE">
-  <button type="submit">Delete Art</button>
-  </form>
-</div>
+  
+ 
  
   <div class="empty">
-    <div class="box"></div>
+    <%arts.forEach(art => {%>
+      <div class="box">
+        <img src="<%= art.image %>" width="220px" height="220px">
+      </div>
+    <%})%>
+    
    <div class="box"></div>
    <div class="box"></div>
 
