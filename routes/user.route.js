@@ -41,10 +41,32 @@ router.post(
     });
   }
 );
+router.post(
+  "/user/update/:id",
+  [check("Newfirstname").isLength({min: 3}), check("Newlastname").isLength({ min: 3 })],
+  (request, response) => {
+    console.log(request.body);
+    let updateObj = { firstname: request.body.newfirstname };
+    if (request.body.newlastname == request.body.reNewlastname) {
+      updateObj.lastname = request.body.newlastname;
+    }
+    User.findById(request.params.id).then(user => {
+      user.firstname = updateObj.firstname;
+      user.lastname = updateObj.lastname;
+      user.save();
+      request.logout();
+      request.flash("updated", "Updated. Please Signin again!");
+      response.redirect("/auth/signin");
+    });
+  }
+);
+
+// check("firstname").isLength({ min: 3 }),
+//     check("lastname").isLength({ min: 3 }),
 
 // router.post(
 //   "/user/update/:id",
-//   [check("newEmail").isEmail(), check("newPassword").isLength({ min: 6 })],
+//   [check("newEmail").isEmail(), check("newLast Name").isLength({ min: 6 })],
 //   (request, response) => {
 //     const errors = validationResult(request);
 //     if (!errors.isEmpty()) {
