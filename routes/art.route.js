@@ -17,10 +17,8 @@ router.get("/art/create", isArtist, (request, response) => {
   response.render("art/create");
 });
 
-
-
 //--- Post
-router.post("/artist/<%= artist._id%>", isArtist, (request, response) => {
+router.post("/art/create/:id", isArtist, (request, response) => {
   var form = new formidable.IncomingForm();
   form.parse(request, function(err, fields, files) {
     var oldpath = files.image.path;
@@ -52,7 +50,5 @@ router.post("/artist/<%= artist._id%>", isArtist, (request, response) => {
     });
   });
 });
-
-
 
 module.exports = router;
