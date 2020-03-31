@@ -64,15 +64,13 @@
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <% if(currentUser){%> <% if(currentUser.userType == "artist"){%>
           <li class="nav-item">
             <a class="nav-link" href="/art/create">Post</a>
           </li>
-          <%}%> <%}%>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
-              href="#"
+              href="/art/create"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -143,8 +141,8 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"
     ></script>
     <script
@@ -157,7 +155,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/alertAnimations.js"></script>
   </body>
 </html>
 

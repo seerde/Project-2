@@ -6,6 +6,7 @@ const expressLayouts = require("express-ejs-layouts");
 const authRoutes = require("./routes/auth.route");
 const artRoutes = require("./routes/art.route");
 const userRoutes = require("./routes/user.route");
+
 //const seniorRoutes = require("./routes/senior.route");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -57,6 +58,7 @@ server.use(function(request, response, next) {
 server.use(artRoutes);
 server.use(authRoutes);
 server.use(userRoutes);
+
 
 server.get("/", (request, response) => {
   response.redirect("/home");
