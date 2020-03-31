@@ -21,6 +21,14 @@ const userSchema = mongoose.Schema(
       type: String,
       required: true
     },
+    phone: {
+      type: String,
+      required: true
+    },
+    image: {
+      type: String,
+      default: "http://placehold.it/80x80"
+    },
     userType: {
       type: String,
       enum: ["admin", "user", "artist"],
