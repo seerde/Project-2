@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/user.model");
 const Art = require("../models/art.model");
+const Order = require("../models/order.model");
 const moment = require("moment");
 
 // const Order = require("../models/order.model");
@@ -62,11 +63,22 @@ router.post(
             return response.redirect("/auth/signup");
           }
           fields.image = imagPath;
-          // console.log(fields);
           let user = new User(fields);
           user
             .save()
             .then(user => {
+              let orderObj = {
+                totalQty: 0,
+                totalPrice: 0
+              };
+              if (user.userType == "user") {
+                orderObj.user = user;
+                let order = new Order(orderObj);
+                order.save();
+                user.order = order;
+                user.save();
+              }
+
               if (user.userType == "artist") {
                 passport.authenticate("local", {
                   successRedirect: "/art/create",

@@ -1,0 +1,10 @@
+<div style="color: white;">
+  <% order.arts.forEach(function (art, i){%>
+  <div>
+    <%= art.title %> by <%= art.user.firstname %> ................ 1Qt
+  </div>
+  <%})%>
+  <div>
+    <h3>total: $<%= order.totalPrice %></h3>
+  </div>
+</div>

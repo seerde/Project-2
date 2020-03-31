@@ -39,7 +39,11 @@ const userSchema = mongoose.Schema(
         type: mongoose.Schema.Types.ObjectId,
         ref: "Art"
       }
-    ]
+    ],
+    order: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Order"
+    }
   },
   { timestamps: true }
 );

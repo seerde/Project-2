@@ -25,25 +25,13 @@ const artSchema = mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
+      autopopulate: true
     }
   },
-  { timestamps: true },
-
-  {
-    name: String,
-    image: String,
-    art: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "art"
-      }
-    ]
-  },
-  {
-    timestamp: true
-  }
+  { timestamps: true }
 );
+artSchema.plugin(require("mongoose-autopopulate"));
 
 const Art = mongoose.model("Art", artSchema);
 module.exports = Art;
