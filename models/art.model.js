@@ -30,19 +30,20 @@ const artSchema = mongoose.Schema(
   },
   { timestamps: true },
 
-
-{
-  name: String,
-  image: String,
-  art: [{
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "art"
-  }]
-}, {
-  timestamp: true
-})
-
-
+  {
+    name: String,
+    image: String,
+    art: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "art"
+      }
+    ]
+  },
+  {
+    timestamp: true
+  }
+);
 
 const Art = mongoose.model("Art", artSchema);
 module.exports = Art;

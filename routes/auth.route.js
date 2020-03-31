@@ -45,6 +45,7 @@ router.post(
   (request, response) => {
     var form = new formidable.IncomingForm();
     form.parse(request, function(err, fields, files) {
+      request.body = fields;
       var oldpath = files.image.path;
       var imagPath = "/images/" + files.image.name;
       var uploadpath = "./public/images/" + files.image.name;
@@ -58,6 +59,7 @@ router.post(
             return response.redirect("/auth/signup");
           }
           fields.image = imagPath;
+          // console.log(fields);
           let user = new User(fields);
           user
             .save()
