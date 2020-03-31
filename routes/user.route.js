@@ -42,7 +42,7 @@ router.post(
   }
 );
 router.post(
-  "/user/update/:id",
+  "/user/updateInformation/:id",
   [check("Newfirstname").isLength({min: 3}), check("Newlastname").isLength({ min: 3 })],
   (request, response) => {
     console.log(request.body);
