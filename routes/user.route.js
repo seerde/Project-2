@@ -7,7 +7,11 @@ const { check, validationResult } = require("express-validator");
 //--- Get
 
 router.get("/user/index", isLoggedIn, (request, response) => {
-  response.render("user/index");
+  User.findById(request.user._id)
+    .populate("art")
+    .then(user => {
+      response.render("user/index", { user });
+    });
 });
 
 router.get("/user/show/:id", (request, response) => {

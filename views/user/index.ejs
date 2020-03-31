@@ -2,7 +2,36 @@
 <h1><a href="/auth/home">home</a></h1>
 <h1><a href="/user/update">Update Email and Password</a></h1>
 <h1><a href="/user/updateInformation">Update informaction</a></h1>
-
+<div class="artist__work" id="loguser">
+  <% if(currentUser.userType == "artist"){%>
+  <h3>Your Work</h3>
+  <div class="artists__container">
+    <% user.art.forEach(art => {%>
+    <div class="artist__box">
+      <div>
+        <img src="<%= art.image %>" width="200px" height="200px" />
+      </div>
+      <div>
+        <div>
+          <%= art.title %>
+        </div>
+        <div>
+          <%= art.description %>
+        </div>
+        <div>
+          $<%= art.price %>
+        </div>
+        <form action="/art/update/<%= art._id %>" method="POST">
+          <button type="submit" class="btn btn-lg btn-primary btn-block">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+    <%})%>
+  </div>
+  <%}%>
+</div>
 <footer>
   made by EJM group @2020
 </footer>

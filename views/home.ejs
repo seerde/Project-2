@@ -13,7 +13,14 @@
     <div class="empty">
       <%arts.forEach(art => {%>
       <div class="box">
-        <img src="<%= art.image %>" width="220px" height="220px" />
+        <form action="/order/add/<%= art._id %>" method="POST">
+          <img src="<%= art.image %>" width="220px" height="220px" />
+          <%if(currentUser.userType == "user"){%>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+            Add to Cart
+          </button>
+          <%}%>
+        </form>
       </div>
       <%})%>
 

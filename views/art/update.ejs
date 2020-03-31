@@ -1,0 +1,40 @@
+<h1>Update art</h1>
+<form
+  method="POST"
+  action="/art/update/final/<%= art._id %>"
+  enctype="multipart/form-data"
+>
+<nav id="Post">
+  <div>
+    <label>Update Title </label>
+    <br />
+    <input name="title" value="<%= art.title %>"/>
+  </div>
+
+  <div>
+    <label>Update Description </label>
+    <br />
+    <textarea
+      name="description"
+      cols="30"
+      rows="10"
+    ><%= art.description %></textarea>
+  </div>
+
+  <div>
+    <label>Update Price </label>
+    <br />
+    <input type="number" name="price" value="<%= art.price %>"/>
+  </div>
+
+  <div>
+    <label>Update Art Image </label>
+    <br />
+    <input type="file" name="image" value="<%= art.image %>"/>
+  </div>
+<br>
+<div>
+  <button type="submit">Update Art</button>
+
+</form>
+</nav>
