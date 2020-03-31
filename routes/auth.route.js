@@ -30,7 +30,9 @@ router.get("/auth/logout", (request, response) => {
 
 router.get("/home", isLoggedIn, (request, response) => {
   Art.find().then(arts => {
-    response.render("home", { arts, moment });
+    User.find().then(users => {
+      response.render("home", { arts, moment, users });
+    });
   });
 });
 

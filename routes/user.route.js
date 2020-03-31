@@ -10,6 +10,14 @@ router.get("/user/index", isLoggedIn, (request, response) => {
   response.render("user/index");
 });
 
+router.get("/user/show/:id", (request, response) => {
+  User.findById(request.params.id)
+    .populate("art")
+    .then(user => {
+      response.render("user/show", { user });
+    });
+});
+
 router.get("/user/update", isLoggedIn, (request, response) => {
   response.render("user/update");
 });
@@ -41,10 +49,36 @@ router.post(
     });
   }
 );
+router.post(
+  "/user/updateinformation/:id",
+  [
+    check("newFirstname").isLength({ min: 3 }),
+    check("newLastname").isLength({ min: 3 })
+  ],
+  (request, response) => {
+    const errors = validationResult(request);
+    if (!errors.isEmpty()) {
+      request.flash("autherror", errors.errors);
+      return response.redirect("/auth/signup");
+    }
+    let updateObj = {
+      firstname: request.body.newFirstname,
+      lastname: request.body.newLastname
+    };
+    User.findById(request.params.id).then(user => {
+      user.firstname = updateObj.firstname;
+      user.lastname = updateObj.lastname;
+      user.save();
+      request.logout();
+      request.flash("updated", "Updated. Please Signin again!");
+      response.redirect("/auth/signin");
+    });
+  }
+);
 
 // router.post(
 //   "/user/update/:id",
-//   [check("newEmail").isEmail(), check("newPassword").isLength({ min: 6 })],
+//   [check("newEmail").isEmail(), check("newLast Name").isLength({ min: 6 })],
 //   (request, response) => {
 //     const errors = validationResult(request);
 //     if (!errors.isEmpty()) {

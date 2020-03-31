@@ -13,7 +13,7 @@
       placeholder="Old First name"
       required=""
       autofocus=""
-      name="oldName"
+      name="oldFirstname"
       value="<%= currentUser.firstname %>"
       disabled
     />
@@ -25,7 +25,7 @@
       placeholder="New First Name"
       required=""
       autofocus=""
-      name="renewName"
+      name="newFirstname"
     />
     <label for="inputlast" class="sr-only">Old Last Name</label>
     <input
@@ -34,8 +34,9 @@
       class="form-control"
       placeholder="Old Last Name"
       required=""
-      name="oldLast Name"
+      name="oldLastname"
       value="<%= currentUser.lastname %>"
+      disabled
     />
     <label for="inputLast Name" class="sr-only">New Last Name</label>
     <input
@@ -44,7 +45,7 @@
       class="form-control"
       placeholder="New Last Name"
       required=""
-      name="renewLastName"
+      name="newLastname"
     />
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">

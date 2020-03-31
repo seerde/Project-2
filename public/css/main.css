@@ -7,7 +7,6 @@ body {
   margin: 0;
   background-image: url(/images/image.jpg);
   padding: 5%;
-  
 }
 .form-signin {
   width: 100%;
@@ -21,40 +20,42 @@ body {
 }
 
 #loguser {
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    background-color: rgba(116, 111, 111, 0.555);
-    text-align: center;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  background-color: rgba(116, 111, 111, 0.555);
+  text-align: center;
 }
 
 #Post {
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bolder;
-    background-color: rgba(116, 111, 111, 0.555);
-    text-align: center;
+  color: aliceblue;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+  background-color: rgba(116, 111, 111, 0.555);
+  text-align: center;
 }
 
-#loguser , h1 {
-    font-weight: 900;
+#loguser,
+h1 {
+  font-weight: 900;
 }
 
-#Post , h1 {
-    font-weight: 900;
-    color: aliceblue;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-
+#Post,
+h1 {
+  font-weight: 900;
+  color: aliceblue;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
 }
 .hello {
-    text-align: left;
-    padding: 2%;
+  text-align: left;
+  padding: 2%;
 }
 
 #linkes {
-    background-color: darkslategrey;
+  background-color: darkslategrey;
 }
+
 
 .w3-tooltip{
 
@@ -166,3 +167,85 @@ body {
     font-weight: 600;
     justify-items: flex-end;
   }
+=======
+.box {
+  background-color: rgba(32, 32, 31, 0.76);
+  width: 220px;
+  height: 220px;
+  margin: 1%;
+  margin-left: 5%;
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.empty {
+  padding-left: 15%;
+}
+.partner {
+  padding-top: 40%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.form input[type="text"] {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid grey;
+  float: left;
+  width: 70%;
+  background: #f1f1f1;
+  font-family: "Courier New", Courier, monospace;
+}
+
+form.form button {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  background: rgb(0, 0, 0);
+  color: white;
+  font-size: 12px;
+  border: 1px solid rgb(12, 10, 10);
+  border-left: none;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+
+form.form button:hover {
+  background: #535353bb;
+}
+
+form.form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#signup {
+  background-color: black;
+  border-color: black;
+}
+
+#signup:hover {
+  background-color: rgba(102, 102, 102, 0.801); /* Green */
+  color: white;
+}
+
+.text-center {
+  font-family: "Courier New", Courier, monospace;
+  color: aliceblue;
+}
+
+.artists__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.artist__box {
+  margin-right: 10px;
+}
+
