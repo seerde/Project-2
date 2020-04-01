@@ -65,14 +65,11 @@ body {
   height: 35px;
   width: 150px;
   text-align: center;
-  
-}	
+}
 
 .aboutbtn {
   margin: auto;
-
 }
-
 
 .form-signin {
   width: 100%;
@@ -100,6 +97,37 @@ body {
 #signup:hover {
   background-color: #167c80;
   color: white;
+  transition: all 0.2s;
+}
+
+#checkout {
+  display: block;
+  color: white;
+  background-color: #167c80;
+  border-radius: 20px;
+  padding: 5px 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-bottom: 5%;
+}
+
+#checkout:hover {
+  background-color: #0d4c4e;
+  transition: all 0.2s;
+}
+
+#remove {
+  color: white;
+  background-color: #bd2525;
+  border-radius: 20px;
+  padding: 5px 3px;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-bottom: 5%;
+}
+
+#remove:hover {
+  background-color: #861b1b;
   transition: all 0.2s;
 }
 
@@ -224,14 +252,11 @@ form.form::after {
   display: table;
 }
 
-
-
 .text-center {
   font-family: "Courier New", Courier, monospace;
   color: aliceblue;
   background-color: rgba(163, 163, 163, 0.116);
   text-align: center;
-
 }
 
 footer {
@@ -273,8 +298,6 @@ form.form::after {
   display: table;
 }
 
-
-
 .text-center {
   font-family: "Courier New", Courier, monospace;
   color: aliceblue;
@@ -307,7 +330,6 @@ form.form::after {
   width: 100%;
   justify-content: center;
   margin: auto auto;
- 
 }
 .navbar__logo__container {
   margin-right: 20%;
@@ -315,7 +337,6 @@ form.form::after {
 .nav__item {
   font-size: 16px;
   padding: 10px 21px;
- 
 }
 .bestSeller__container {
   padding: 200px 0 130px;
@@ -332,18 +353,15 @@ form.form::after {
   background-color: rgba(160, 154, 154, 0.192);
 }
 
-.bestSeller__container{
+.bestSeller__container {
   padding-top: 20px;
   padding: auto;
-  
- 
 }
 
 .bestSeller__tittle {
-  margin-bottom: 80px; 
+  margin-bottom: 80px;
   padding-right: 5%;
   text-align: center;
-
 }
 .bestSeller__tittle h2 {
   font-size: 36px;
@@ -405,19 +423,17 @@ form.form::after {
   background-color: rgba(116, 111, 111, 0.555);
 }
 
-
 .feature {
   /* 1 property */
   display: flex;
   background-color: #063233;
 }
 
-.feat-left, .feat-right {
+.feat-left,
+.feat-right {
   width: 50%;
   height: 400px;
 }
-
-
 
 .feat-left {
   background-image: url("/images/about.png");
@@ -433,7 +449,7 @@ form.form::after {
   color: white;
   margin: 1em 0;
   font-style: italic;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   text-align: center;
 }
 
@@ -456,9 +472,7 @@ form.form::after {
   padding-right: 25%;
   text-align: center;
   padding-bottom: 2%;
-  
 }
-
 
 #crt {
   text-align: left;
@@ -469,11 +483,9 @@ form.form::after {
   height: 38px;
   width: 150px;
   text-align: center;
-  
-}	
+}
 
-
-.nam{
+.nam {
   height: 48px;
   width: 250px;
   text-align: center;
@@ -485,8 +497,7 @@ form.form::after {
   width: 150px;
   text-align: center;
   margin-bottom: 5%;
-  
-}	
+}
 
 .aboutbtn,
 .art {
@@ -494,20 +505,16 @@ form.form::after {
   width: 150px;
   text-align: center;
   margin-bottom: 5%;
-  
-}	
+}
 
-
-.crt{
+.crt {
   height: 38px;
   width: 150px;
   text-align: center;
   margin-left: 0 !important;
-
 }
 
-
-.sup{
+.sup {
   height: 38px;
   width: 150px;
   text-align: center;
@@ -519,4 +526,3 @@ form.form::after {
   width: 150px !important;
   height: 150px !important;
 }
-
