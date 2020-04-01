@@ -14,7 +14,7 @@ const flash = require("connect-flash");
 let passport = require("./config/passportConfig");
 
 mongoose.connect(
-  process.env.mongoDBURL,
+  process.env.DB,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
