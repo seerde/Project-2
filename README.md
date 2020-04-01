@@ -23,7 +23,9 @@ By the time we submit this project, we have covered new ground in, and reviewed,
 - **Web Fundamentals**: Communicate with internet, and how to structure, style, and animate documents within a browser.
 - **Browser Applications**: Dive into CSS, to use libraries and frameworks to get lots of style and functionality for free. Such as Bootstrap
 - **Databases**: one to many, many to one, and many to many.
-# ![](images/database.jpg)
+# ![](./public/images/database.jpg)
+
+
 - **NodeJS and Express**: A web-application framework to create database-backed web applications.
 - **Mongodb**: Use to database program.
 - **Mongoose**: Provides a schema-based solution for object modeling with Node.js to model your Mongodb data.
@@ -42,13 +44,13 @@ By the time we submit this project, we have covered new ground in, and reviewed,
 
 #### Authentication
 -  sign up 
-# ![](images/Untitled-7.png)
+# ![](./public/images/Untitled-7.png)
 -  sign in
-# ![](images/Untitled-8.png)
+# ![](./public/images/Untitled-8.png)
 -  change password
-# ![](images/Untitled-1.png)
+# ![](./public/images/Untitled-1.png)
 -  sign out
-# ![](images/Untitled-9.png)
+# ![](./public/images/Untitled-9.png)
 
 #### 2 extra resources 
 - User able to create a resource
@@ -64,6 +66,6 @@ By the time we submit this project, we have covered new ground in, and reviewed,
 - Use a CSS library like [Bootstrap](https://www.npmjs.com/package/bootstrap)
 
 
-# ![](images/Untitled-2.png)
-# ![](images/Untitled-3.png)
-# ![](images/Untitled-5.png)
+# ![](./public/images/Untitled-2.png)
+# ![](./public/images/Untitled-3.png)
+# ![](./public/images/Untitled-5.png)
