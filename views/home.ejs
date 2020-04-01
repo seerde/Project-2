@@ -1,5 +1,13 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
+<div id="hero" class="hero-cont">
+  <div class="hero">
+    <h2>ART GALLERY</h2>
+    <h1>About the Art Gallery</h1>
+    <a class="aboutbtn" href="#feature">Learn More</a>
+  </div>
+</div>
+
 <div class="bestSeller__container">
   <div class="container">
     <div class="row">
@@ -15,7 +23,7 @@
         <div class="single__item">
           <div>
             <a href="/art/show/<%= art._id %>"
-              ><img src="<%= art.image %>" width="100%" height="300px"
+              ><img src="<%= art.image %>" width="70%" height="200px"
             /></a>
           </div>
           <p><%= art.title %></p>
@@ -91,6 +99,18 @@
     </div>  
   </div>
 </div>
+
+ <section id="feature" class="feature">
+        <div class="feat-left"></div>
+        <div class="feat-right">
+          <span class="feat-intro"></span>
+          <h3>Art Gallery</h3>
+          <p>
+            "Integral to the Gallery’s collection and activities is the knowledge and scholarship that bring meaning and relevance to the artworks themselves. A core element in our exhibitions and programs, it is also evident in our publishing program, which is unmatched by any other such institution in Saudi Arabia."
+          </p>
+          
+        </div>
+      </section>
 
 <div>
   <div class="empty">
