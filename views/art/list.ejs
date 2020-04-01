@@ -12,29 +12,27 @@
       <div class="col-lg-4 col-sm-6">
         <div class="single__item">
           <div>
-            <a href="/art/show/<%= art._id %>"
-              ><img src="<%= art.image %>" width="90%" height="250px"
-            /></a>
+            <a href="/art/show/<%= art._id %>">
+              <img src="<%= art.image %>" width="90%" height="250px" />
+            </a>
           </div>
           <div class="info">
             <p><%= art.title %></p>
-          <a href="/art/show/<%= art._id %>"><h3><%= art.description %></h3></a>
-          <p>For $<%= art.price %></p>
-          <a href="/user/show/<%= art.user._id %>"
-            ><p>By <%= art.user.firstname %> <%= art.user.lastname %></p></a>
-         </div> 
-         <div>
-            <%if(currentUser.userType == "user"){%>
-            <form action="/order/add/<%= art._id %>" method="POST">
-              <button
-                id="signup">
-                Add to Cart
-              </button>
+            <a href="/art/show/<%= art._id %>">
+              <h3><%= art.description %></h3>
+            </a>
+            <p>For $<%= art.price %></p>
+            <a href="/user/show/<%= art.user._id %>">
+              <p>By <%= art.user.firstname %> <%= art.user.lastname %></p>
+            </a>
           </div>
-          
+          <%if(currentUser.userType == "user"){%>
+          <div>
+            <form action="/order/add/<%= art._id %>" method="POST">
+              <button id="signup">Add to Cart</button>
             </form>
-            <%}%>
-          
+          </div>
+          <%}%>
         </div>
       </div>
       <%})%>
