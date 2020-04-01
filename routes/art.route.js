@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/user.model");
 const Art = require("../models/art.model");
 const express = require("express");
+const methodOverride = require("method-override");
 const multer = require("multer");
 const fs = require("fs");
 const path = require("path");
@@ -26,6 +27,7 @@ let updateArt = "";
 let showArt = "";
 
 router.use(express.urlencoded({ extended: true }));
+router.use(methodOverride("_method"));
 
 //--- Get
 router.get("/art/show/:id", (request, response) => {
@@ -109,6 +111,25 @@ router.post("/art/create/:id", upload.single("image"), (req, res, next) => {
     .catch(err => {
       console.log(err);
       res.send("Error!!!!!");
+    });
+});
+
+router.delete("/art/:id/delete", (request, response) => {
+  User.findById(request.user._id)
+    .populate("art")
+    .then(user => {
+      let index = 0;
+      user.art.forEach((art, i) => {
+        if (art._id == request.params.id) {
+          index = i;
+        }
+      });
+      user.art.splice(index, 1);
+      user.save();
+      Art.findByIdAndDelete(request.params.id).then(() => {
+        request.flash("success", "Art Deleted!");
+        response.redirect("/home");
+      });
     });
 });
 

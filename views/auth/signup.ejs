@@ -1,4 +1,9 @@
 <div class="text-center back">
+  <%if(true){%>
+  <div class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <%}%>
   <form
     class="form-signin"
     method="POST"
@@ -73,3 +78,38 @@
     </button>
   </form>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<script>
+  $(function() {
+    // Initialize form validation on the registration form.
+    // It has the name attribute "registration"
+    $(".form-signin").validate({
+      rules: {
+        // The key name on the left side is the name attribute
+        // of an input field. Validation rules are defined
+        // on the right side
+        firstname: {
+          minlength: 3,
+          required: true
+        },
+        lastname: {
+          minlength: 3,
+          required: true
+        },
+        password: {
+          minlength: 6,
+          required: true
+        },
+        email: {
+          required: true,
+          // Specify that email should be validated
+          // by the built-in "email" rule
+          email: true
+        }
+      },
+      submitHandler: function(form) {
+        form.submit();
+      }
+    });
+  });
+</script>
