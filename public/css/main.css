@@ -526,3 +526,8 @@ form.form::after {
   width: 150px !important;
   height: 150px !important;
 }
+
+video {
+  width: 100%;
+  height: auto;
+}
