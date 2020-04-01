@@ -195,7 +195,10 @@ h1 {
   margin-left: 5%;
   float: left;
 }
-
+.post__view {
+  width: 40%;
+  margin: 0 auto;
+}
 .color__fix {
   color: black !important;
 }

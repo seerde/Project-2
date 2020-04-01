@@ -1,5 +1,7 @@
 <h1>Post your art</h1>
-<form
+<div class="container">
+  <div class="post__view">
+  <form
   method="POST"
   action="/art/create/<%= currentUser._id %>"
   enctype="multipart/form-data"
@@ -8,7 +10,7 @@
   <div>
     <label>Title </label>
     <br />
-    <input name="title" class="color__fix"/>
+    <input name="title" class="color__fix form-control"/>
   </div>
 
   <div>
@@ -19,24 +21,25 @@
       cols="30"
       rows="10"
       placeholder="Tell us about your Art"
-      class="color__fix"
+      class="color__fix form-control"
     ></textarea>
   </div>
 
   <div>
     <label> Price </label>
     <br />
-    <input type="number" name="price" class="color__fix"/>
+    <input type="number" name="price" class="color__fix form-control"/>
   </div>
 
   <div>
     <label>Upload Art Image </label>
     <br />
-    <input type="file" name="image" id="upload__img" class="text-center"/>
+    <input type="file" name="image" id="upload__img" class="text-center form-control"/>
   </div>
 <br>
 <div>
   <button id="signup" class="btn btn-lg btn-primary btn-block aboutbtn" type="submit">Create Art</button>
-
-</form>
 </nav>
+</form>
+  </div>
+</div>
