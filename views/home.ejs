@@ -1,5 +1,33 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
+<div class="bestSeller__container">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bestSeller__tittle text-center">
+          <h2>Best Seller</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <%arts.forEach(art => {%>
+      <div class="col-lg-4 col-sm-6">
+        <div>
+          <div>
+            <a href="/art/show/<%= art._id %>"
+              ><img src="<%= art.image %>" width="220px" height="220px"
+            /></a>
+          </div>
+          <p><%= art.title %></p>
+          <a href="/art/show/<%= art._id %>"><h3><%= art.description %></h3></a>
+          <p>For $<%= art.price %></p>
+        </div>
+      </div>
+      <%})%>
+    </div>
+  </div>
+</div>
+
 <nav id="loguser">
   <div class="hello"><h4>artist Gallery <%= currentUser.firstname %>!</h4></div>
   <!-- <div><h3>You are logged in <%= currentUser.firstname %>!</h3></div> -->
@@ -20,12 +48,13 @@
             Art Description: <%= art.description %> <br />Price: <%= art.price
             %>
           </p>
-          <img
-            src="<%= art.image %>"
-            class="w3-hover-opacity"
-            width="220px"
-            height="220px"
-          />
+          <a href="/art/show/<%= art._id %>"
+            ><img
+              src="<%= art.image %>"
+              class="w3-hover-opacity"
+              width="220px"
+              height="220px"
+          /></a>
         </div>
         <div>
           <%if(currentUser.userType == "user"){%>
@@ -44,7 +73,7 @@
   <div class="partner">
     <h1>ARTISTS WE WORK WITH</h1>
     <div class="artists__container">
-      <% users.forEach(user => { %>
+      <% users.forEach(user => { %> <%if(user.userType == "artist"){%>
       <div class="artist__box">
         <div>
           <a href="/user/show/<%= user._id %>">
@@ -60,7 +89,7 @@
           <div><%= user.phone %></div>
         </div>
       </div>
-      <% }) %>
+      <%}%> <% }) %>
     </div>
   </div>
 </nav>

@@ -3,6 +3,7 @@ const User = require("../models/user.model");
 const passport = require("../config/passportConfig");
 const isLoggedIn = require("../config/loginBlocker");
 const { check, validationResult } = require("express-validator");
+let showUser = "";
 
 //--- Get
 
@@ -13,13 +14,16 @@ router.get("/user/index", isLoggedIn, (request, response) => {
       response.render("user/index", { user });
     });
 });
-
-router.get("/user/show/:id", (request, response) => {
-  User.findById(request.params.id)
+router.get("/user/show", (request, response) => {
+  User.findById(showUser)
     .populate("art")
     .then(user => {
       response.render("user/show", { user });
     });
+});
+router.get("/user/show/:id", (request, response) => {
+  showUser = request.params.id;
+  response.redirect("/user/show");
 });
 
 router.get("/user/update", isLoggedIn, (request, response) => {

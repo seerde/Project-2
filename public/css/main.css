@@ -221,3 +221,33 @@ form.form::after {
   text-align: center;
   background-color: gray;
 }
+.navbar__container {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  margin: auto auto;
+}
+.navbar__logo__container {
+  margin-right: 20%;
+}
+.nav__item {
+  font-size: 16px;
+  padding: 10px 21px;
+}
+.bestSeller__container {
+  padding: 200px 0 130px;
+  background-color: green;
+  width: 100%;
+  height: 100vh;
+}
+.bestSeller__tittle {
+  margin-bottom: 80px;
+}
+.bestSeller__tittle h2 {
+  font-size: 36px;
+  color: #ffffff;
+  line-height: 27px;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 28px;
+}

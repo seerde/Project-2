@@ -10,10 +10,21 @@ let formidable = require("formidable");
 
 let fs = require("fs");
 let updateArt = "";
+let showArt = "";
 
 router.use(express.urlencoded({ extended: true }));
 
 //--- Get
+router.get("/art/show/:id", (request, response) => {
+  showArt = request.params.id;
+  response.redirect("/art/show");
+});
+router.get("/art/show", (request, response) => {
+  Art.findById(showArt).then(art => {
+    response.render("art/show", { art });
+  });
+});
+
 router.get("/art/create", isArtist, (request, response) => {
   response.render("art/create");
 });

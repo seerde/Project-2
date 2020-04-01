@@ -1,11 +1,26 @@
-<!-- breadcrumb part start-->
-<section class="breadcrumb_part single_product_breadcrumb">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="breadcrumb_iner"></div>
-      </div>
+<div>
+  <div>
+    <img src="<%= art.image %>" width="700" height="700" />
+  </div>
+  <div>
+    <div>
+      <h3>
+        <%= art.title %>
+      </h3>
+    </div>
+    <div>
+      <p>
+        <%= art.description %>
+      </p>
+    </div>
+    <div>
+      For $<%= art.price %>
+    </div>
+    <div>
+      By
+      <a href="/user/show/<%= art.user._id %>"
+        ><%= art.user.firstname %> <%= art.user.lastname %></a
+      >
     </div>
   </div>
-</section>
-<!-- breadcrumb part end-->
+</div>
