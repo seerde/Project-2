@@ -24,6 +24,11 @@ router.get("/art/show", (request, response) => {
     response.render("art/show", { art });
   });
 });
+router.get("/art/list", isLoggedIn, (request, response) => {
+  Art.find().then(arts => {
+    response.render("art/list", { arts });
+  });
+});
 
 router.get("/art/create", isArtist, (request, response) => {
   response.render("art/create");

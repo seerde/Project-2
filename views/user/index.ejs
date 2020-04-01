@@ -1,42 +1,57 @@
 <h1>Hello <%= currentUser.firstname %></h1>
-<div class="w3-bar-block w3-black" style="width:320px">
-  <a href="/home" class="w3-bar-item w3-button">home</a>
-  <a href="/user/update" class="w3-bar-item w3-button"
-    >Update Email and Password</a
-  >
-  <a href="/user/updateInformation" class="w3-bar-item w3-button"
-    >Update informaction</a
-  >
+<div class="container">
+  <div class="main__view">
+    <div class="w3-bar-block w3-black left__view">
+      <a href="/home" class="w3-bar-item w3-button">Home</a>
+      <a href="/user/update" class="w3-bar-item w3-button"
+        >Update Email and Password</a
+      >
+      <a href="/user/updateInformation" class="w3-bar-item w3-button"
+        >Update informaction</a
+      >
+    </div>
+    <div class="right__view"></div>
+  </div>
 </div>
-<div class="artist__work" id="loguser">
-  <% if(currentUser.userType == "artist"){%>
-  <h3>Your Work</h3>
-  <div class="artists__container">
-    <% user.art.forEach(art => {%>
-    <div class="artist__box">
-      <div>
-        <img src="<%= art.image %>" width="200px" height="200px" />
+<div class="container">
+  <div class="yourWork__container">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="bestSeller__tittle text-center">
+            <h2>Your Work</h2>
+          </div>
+        </div>
       </div>
-      <div>
-        <div>
-          <%= art.title %>
+      <div class="row">
+        <%user.art.forEach(art => {%>
+        <div class="col-lg-4 col-sm-6">
+          <div class="single__item">
+            <div>
+              <a href="/art/show/<%= art._id %>"
+                ><img src="<%= art.image %>" width="100%" height="300px"
+              /></a>
+            </div>
+            <p><%= art.title %></p>
+            <a href="/art/show/<%= art._id %>"
+              ><h3><%= art.description %></h3></a
+            >
+            <p>For $<%= art.price %></p>
+            <form action="/art/update/<%= art._id %>" method="POST">
+              <button
+                type="submit"
+                id="signup"
+                class="btn btn-lg btn-primary btn-block"
+              >
+                Update
+              </button>
+            </form>
+          </div>
         </div>
-        <div>
-          <%= art.description %>
-        </div>
-        <div>
-          $<%= art.price %>
-        </div>
-        <form action="/art/update/<%= art._id %>" method="POST">
-          <button type="submit" class="btn btn-lg btn-primary btn-block">
-            Update
-          </button>
-        </form>
+        <%})%>
       </div>
     </div>
-    <%})%>
   </div>
-  <%}%>
 </div>
 <footer>
   made by EJM group @2020

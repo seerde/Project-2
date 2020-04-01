@@ -21,6 +21,12 @@ router.get("/user/show", (request, response) => {
       response.render("user/show", { user });
     });
 });
+router.get("/user/list", isLoggedIn, (request, response) => {
+  User.find().then(user => {
+    response.render("user/list", { user });
+  });
+});
+
 router.get("/user/show/:id", (request, response) => {
   showUser = request.params.id;
   response.redirect("/user/show");

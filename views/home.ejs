@@ -12,15 +12,24 @@
     <div class="row">
       <%arts.forEach(art => {%>
       <div class="col-lg-4 col-sm-6">
-        <div>
+        <div class="single__item">
           <div>
             <a href="/art/show/<%= art._id %>"
-              ><img src="<%= art.image %>" width="220px" height="220px"
+              ><img src="<%= art.image %>" width="100%" height="300px"
             /></a>
           </div>
           <p><%= art.title %></p>
           <a href="/art/show/<%= art._id %>"><h3><%= art.description %></h3></a>
           <p>For $<%= art.price %></p>
+          <div>
+            <%if(currentUser.userType == "user"){%>
+            <form action="/order/add/<%= art._id %>" method="POST">
+              <button id="signup" class="btn btn-lg btn-primary btn-block" type="submit">
+                Add to Cart
+              </button>
+            </form>
+            <%}%>
+          </div>
         </div>
       </div>
       <%})%>
@@ -29,48 +38,7 @@
 </div>
 
 <nav id="loguser">
-  <div class="hello"><h4>artist Gallery <%= currentUser.firstname %>!</h4></div>
-  <!-- <div><h3>You are logged in <%= currentUser.firstname %>!</h3></div> -->
-  <hr />
   <div>
-    <% if(currentUser.userType == "admin"){ %> <%
-    users.forEach(function(user){%>
-    <div><%= user.firstname %></div>
-    <% }) %> <% } %>
-
-    <h1 class="best">Best Seller</h1>
-
-    <div class="empty" id="price">
-      <%arts.forEach(art => {%>
-      <div class="box">
-        <div class="w3-tooltip">
-          <p class="w3-text">
-            Art Description: <%= art.description %> <br />Price: <%= art.price
-            %>
-          </p>
-          <a href="/art/show/<%= art._id %>"
-            ><img
-              src="<%= art.image %>"
-              class="w3-hover-opacity"
-              width="220px"
-              height="220px"
-          /></a>
-        </div>
-        <div>
-          <%if(currentUser.userType == "user"){%>
-          <form action="/order/add/<%= art._id %>" method="POST">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-              Add to Cart
-            </button>
-          </form>
-          <%}%>
-        </div>
-      </div>
-      <%})%>
-    </div>
-  </div>
-  <hr />
-  <div class="partner">
     <h1>ARTISTS WE WORK WITH</h1>
     <div class="artists__container">
       <% users.forEach(user => { %> <%if(user.userType == "artist"){%>

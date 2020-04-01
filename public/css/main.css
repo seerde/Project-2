@@ -1,7 +1,12 @@
+@font-face {
+  font-family: rubik;
+  src: url(./fonts/Rubik-Regular.ttf);
+}
 *,
 ::after,
 ::before {
   box-sizing: border-box;
+  font-family: rubik !important;
 }
 body {
   margin: 0;
@@ -217,7 +222,7 @@ form.form::after {
   margin-right: 10px;
 }
 
-.ad{
+.ad {
   background-color: rgba(32, 32, 31, 0.76);
   width: 200px;
   height: 200px;
@@ -245,9 +250,18 @@ form.form::after {
 }
 .bestSeller__container {
   padding: 200px 0 130px;
-  background-color: green;
+  background-color: rgba(116, 111, 111, 0.555);
   width: 100%;
   height: 100vh;
+}
+.yourWork__container {
+  background-color: rgba(116, 111, 111, 0.555);
+  margin-top: 10%;
+  width: 100%;
+  height: 100vh;
+}
+.artList__container {
+  background-color: rgba(116, 111, 111, 0.555);
 }
 .bestSeller__tittle {
   margin-bottom: 80px;
@@ -259,4 +273,42 @@ form.form::after {
   font-weight: 700;
   position: relative;
   margin-bottom: 28px;
+}
+.single__item {
+  color: rgb(255, 255, 255);
+}
+.single__item h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.single__item p {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.showArt__container {
+  background-color: rgba(116, 111, 111, 0.555);
+}
+.single__item__text h3 {
+  font-size: 40px;
+}
+.single__item__text p {
+  font-size: 25px;
+}
+.main__view {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+}
+.left__view {
+  background-color: rgba(116, 111, 111, 0.555);
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+}
+.right__view {
+  background-color: rgba(116, 111, 111, 0.555);
+  width: 80%;
+  height: 100%;
 }
