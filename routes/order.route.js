@@ -26,6 +26,29 @@ router.get("/order/show", isUser, (request, response) => {
         });
     });
 });
+router.get("/order/remove/:id", (request, response) => {
+  User.findById(request.user._id)
+    .populate("order")
+    .then(user => {
+      Order.findById(user.order._id)
+        .populate("arts")
+        .then(order => {
+          let index = 0;
+          let price = 0;
+          order.arts.forEach((art, i) => {
+            if (art._id == request.params.id) {
+              index = i;
+              price = art.price;
+            }
+          });
+          order.arts.splice(index, 1);
+          order.totalPrice -= price;
+          order.totalQty -= 1;
+          order.save();
+          response.redirect("/order/show");
+        });
+    });
+});
 
 //--- Post
 router.post("/order/add/:id", isUser, (request, response) => {

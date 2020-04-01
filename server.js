@@ -9,7 +9,8 @@ const userRoutes = require("./routes/user.route");
 const orderRoutes = require("./routes/order.route");
 
 //const seniorRoutes = require("./routes/senior.route");
-const session = require("express-session");
+// const session = require("express-session");
+const session = require("cookie-session");
 const flash = require("connect-flash");
 let passport = require("./config/passportConfig");
 
@@ -69,6 +70,4 @@ server.get("*", (request, response) => {
   response.send("Page not found");
 });
 
-server.listen(process.env.PORT, () =>
-  console.log(`connected to express on ${PORT}`)
-);
+server.listen(PORT, () => console.log(`connected to express on ${PORT}`));

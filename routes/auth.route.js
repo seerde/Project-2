@@ -3,17 +3,28 @@ const User = require("../models/user.model");
 const Art = require("../models/art.model");
 const Order = require("../models/order.model");
 const moment = require("moment");
+const multer = require("multer");
+const fs = require("fs");
+const path = require("path");
+
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, "public/images");
+  },
+  filename: function(req, file, cb) {
+    let fileExtension = path.extname(file.originalname).split(".")[1];
+    cb(null, file.fieldname + "-" + Date.now() + "." + fileExtension);
+  }
+});
+
+var upload = multer({ storage: storage });
 
 // const Order = require("../models/order.model");
 const passport = require("../config/passportConfig");
 const isLoggedIn = require("../config/loginBlocker");
 const { check, validationResult } = require("express-validator");
-let formidable = require("formidable");
-
-let fs = require("fs");
 
 //--- Get
-
 router.get("/auth/signup", (request, response) => {
   response.render("auth/signup");
 });
@@ -38,67 +49,64 @@ router.get("/home", isLoggedIn, (request, response) => {
 });
 
 //--- Post
+
 router.post(
   "/auth/signup",
+  upload.single("image"),
   [
     check("firstname").isLength({ min: 3 }),
     check("lastname").isLength({ min: 3 }),
     check("email").isEmail(),
     check("password").isLength({ min: 6 })
   ],
-  (request, response) => {
-    var form = new formidable.IncomingForm();
-    form.parse(request, function(err, fields, files) {
-      request.body = fields;
-      var oldpath = files.image.path;
-      var imagPath = "/images/" + files.image.name;
-      var uploadpath = "./public/images/" + files.image.name;
+  (req, res, next) => {
+    const errors = validationResult(req.body);
+    if (!errors.isEmpty()) {
+      req.flash("autherror", errors.errors);
+      return res.redirect("/auth/signup");
+    }
+    const file = req.file;
+    if (!file) {
+      const error = new Error("Please upload a file");
+      error.httpStatusCode = 400;
+      return next(error);
+    }
 
-      fs.rename(oldpath, uploadpath, function(err) {
-        if (err) throw err;
-        else {
-          const errors = validationResult(fields);
-          if (!errors.isEmpty()) {
-            request.flash("autherror", errors.errors);
-            return response.redirect("/auth/signup");
-          }
-          fields.image = imagPath;
-          let user = new User(fields);
-          user
-            .save()
-            .then(user => {
-              let orderObj = {
-                totalQty: 0,
-                totalPrice: 0
-              };
-              if (user.userType == "user") {
-                orderObj.user = user;
-                let order = new Order(orderObj);
-                order.save();
-                user.order = order;
-                user.save();
-              }
+    let user = new User(req.body);
+    user.image = "/images/" + file.filename;
 
-              if (user.userType == "artist") {
-                passport.authenticate("local", {
-                  successRedirect: "/art/create",
-                  successFlash: "Account created and Logged In!"
-                })(request, response);
-              } else {
-                passport.authenticate("local", {
-                  successRedirect: "/home",
-                  successFlash: "Account created and Logged In!"
-                })(request, response);
-              }
-            })
-            .catch(err => {
-              console.log(err);
-              request.flash("error", "Email already exists!");
-              return response.redirect("/auth/signup");
-            });
+    user
+      .save()
+      .then(user => {
+        let orderObj = {
+          totalQty: 0,
+          totalPrice: 0
+        };
+        if (user.userType == "user") {
+          orderObj.user = user;
+          let order = new Order(orderObj);
+          order.save();
+          user.order = order;
+          user.save();
         }
+
+        if (user.userType == "artist") {
+          passport.authenticate("local", {
+            successRedirect: "/art/create",
+            successFlash: "Account created and Logged In!"
+          })(req, res);
+        } else {
+          passport.authenticate("local", {
+            successRedirect: "/home",
+            successFlash: "Account created and Logged In!"
+          })(req, res);
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        req.flash("error", "Email already exists!");
+        return res.redirect("/auth/signup");
       });
-    });
   }
 );
 

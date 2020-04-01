@@ -13,6 +13,7 @@
     <div class="right__view"></div>
   </div>
 </div>
+<%if(currentUser.userType == "artist"){%>
 <div class="container">
   <div class="yourWork__container">
     <div class="container">
@@ -46,6 +47,18 @@
                 Update
               </button>
             </form>
+            <form
+              action="/art/<%= art._id %>/delete?_method=DELETE"
+              method="POST"
+            >
+              <button
+                type="submit"
+                id="signup"
+                class="btn btn-lg btn-primary btn-block"
+              >
+                Delete
+              </button>
+            </form>
           </div>
         </div>
         <%})%>
@@ -53,6 +66,7 @@
     </div>
   </div>
 </div>
+<%}%>
 <footer>
   made by EJM group @2020
 </footer>
