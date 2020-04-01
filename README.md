@@ -23,7 +23,7 @@ By the time we submit this project, we have covered new ground in, and reviewed,
 - **Web Fundamentals**: Communicate with internet, and how to structure, style, and animate documents within a browser.
 - **Browser Applications**: Dive into CSS, to use libraries and frameworks to get lots of style and functionality for free. Such as Bootstrap
 - **Databases**: one to many, many to one, and many to many.
-# ![](./public/images/database.jpg)
+# ![0](./public/images/database.jpg)
 
 
 - **NodeJS and Express**: A web-application framework to create database-backed web applications.
