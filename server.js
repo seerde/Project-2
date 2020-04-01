@@ -69,6 +69,4 @@ server.get("*", (request, response) => {
   response.send("Page not found");
 });
 
-server.listen(process.env.PORT, () =>
-  console.log(`connected to express on ${PORT}`)
-);
+server.listen(PORT, () => console.log(`connected to express on ${PORT}`));
