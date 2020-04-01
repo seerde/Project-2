@@ -3,3 +3,5 @@ setTimeout(() => {
     $(this).remove();
   });
 }, 3000);
+
+
