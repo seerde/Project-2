@@ -50,7 +50,7 @@ server.use(passport.initialize());
 server.use(passport.session());
 server.use(flash());
 
-server.use(function(request, response, next) {
+server.use(function (request, response, next) {
   // before every route, attach the flash messages and current user to res.locals
   response.locals.alerts = request.flash();
   response.locals.currentUser = request.user;
