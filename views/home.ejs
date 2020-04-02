@@ -58,9 +58,11 @@
         <%})%>
       </ol>
       <div class="carousel-inner">
+        <% let check = 0; %>
         <%users.forEach((user, i) => {%>
           <%if(user.userType == "artist"){%>
-            <%if(i == 0){%>
+            <%if(check == 0){%>
+              <% check += 1 %>
               <div class="carousel-item active">
                 <a href="/user/show/<%= user._id %>"><img class="d-block w-100" src="<%= user.image %>" width="1100px" height="600px"></a>
                 <div class="carousel-caption d-none d-md-block slideShow__text">
