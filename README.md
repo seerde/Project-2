@@ -2,6 +2,7 @@
 
 # Project #2: Art gallery App
 
+### [link to the Web App](https://artgalleryproject.herokuapp.com/home)
 
 we are creating a full stack application using NodeJS and NoSQL.
 
