@@ -7,7 +7,7 @@ we are creating a full stack application using NodeJS and NoSQL.
 
 ---
 
-## What we de
+## What we did
 
 By the time we submit this project, we have covered new ground in, and reviewed, many of the big themes of the course so far:
 
